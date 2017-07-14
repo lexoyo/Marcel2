@@ -18,7 +18,7 @@ var Speech = function() {
                     new this.sdk.Context(
                         new this.sdk.OS(navigator.userAgent, "Browser", null),
                         new this.sdk.Device("SpeechSample", "SpeechSample", "1.0.00000"))),
-                this.sdk.RecognitionMode.Dictation, // this.sdk.RecognitionMode.Interactive  (Options - Interactive/Conversation/Dictation>)
+                this.sdk.RecognitionMode.Interactive, // this.sdk.RecognitionMode.Interactive  (Options - Interactive/Conversation/Dictation>)
                 "fr-FR", 
                 this.sdk.SpeechResultFormat.Simple); // Simple/Detailed
         
@@ -60,7 +60,7 @@ var Speech = function() {
                         // console.log("SpeechSimplePhraseEvent", JSON.stringify(event.Result, null, 3));
                         break;
                     case "RecognitionEndedEvent" :
-                        // console.log(JSON.stringify(event)); // Debug information
+                        console.log('RecognitionEndedEvent', event); 
                         this.listen();
                         break;
                 }
@@ -69,8 +69,7 @@ var Speech = function() {
                 // The request succeeded. Nothing to do here.
             },
             (error) => {
-                console.error(error);
-								this.listen();
+                console.error('Error in ms-speech', error);
             });
         },
         
