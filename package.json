@@ -1,0 +1,19 @@
+{
+  "name": "Marcel2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server pub -o",
+    "postinstall": "mkdir -p pub/libs/ms-speech && cp node_modules/microsoft-speech-browser-sdk/distrib/speech.browser.sdk-min.js node_modules/microsoft-speech-browser-sdk/distrib/speech.browser.sdk.js.map pub/libs/ms-speech/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "microsoft-speech-browser-sdk": "0.0.3"
+  },
+  "devDependencies": {
+    "http-server": "^0.10.0"
+  }
+}
