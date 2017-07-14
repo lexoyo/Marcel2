@@ -18,7 +18,7 @@ var Speech = function() {
                     new this.sdk.Context(
                         new this.sdk.OS(navigator.userAgent, "Browser", null),
                         new this.sdk.Device("SpeechSample", "SpeechSample", "1.0.00000"))),
-                this.sdk.RecognitionMode.Interactive, // this.sdk.RecognitionMode.Interactive  (Options - Interactive/Conversation/Dictation>)
+                this.sdk.RecognitionMode.Conversation, // Interactive/Conversation/Dictation
                 "fr-FR", 
                 this.sdk.SpeechResultFormat.Simple); // Simple/Detailed
         
